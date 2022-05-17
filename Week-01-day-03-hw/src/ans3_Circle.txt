@@ -1,0 +1,32 @@
+public class Circle {
+    private double radius = 1.0;
+
+    public Circle(double v) {
+        this.radius = radius;
+    }
+    public double getRadius() {
+        return radius;
+    }
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+    public double getArea(){
+        return radius*radius*Math.PI;
+    }
+    public double getCircumference(){
+        return radius*radius*Math.PI;
+    }
+}
+###### The Main #######
+public class Main {
+    public static void main(String[] args) {
+        Circle C1 = new Circle(1.0);
+        System.out.println("The circle has radius of "
+                + C1.getRadius() + " and area of " + C1.getArea());
+
+        Circle C2 = new Circle(2.0);
+        C2.setRadius(3.9);
+        System.out.println("The circle has radius of "
+                + C2.getRadius() + " and area of " + C2.getArea());
+    }
+}
