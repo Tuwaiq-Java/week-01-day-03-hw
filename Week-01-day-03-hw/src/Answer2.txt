@@ -1,0 +1,12 @@
+public class Main {
+    public static double calculateTax(double price, double tax) throws RuntimeException {
+       double number =  tax = price * 15/100;
+        if(number > 500 ){
+            throw new RuntimeException("Error! the totel number must be less than 500");
+        }
+        return number;
+    }
+    public static void main(String[] args) {
+        System.out.println(calculateTax(3300, 15));
+    }
+}

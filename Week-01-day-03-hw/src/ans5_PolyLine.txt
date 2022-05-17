@@ -1,0 +1,37 @@
+import java.awt.*;
+import java.util.ArrayList;
+public class PolyLine {
+    private ArrayList<Point> Points;
+    private double Length;
+
+    public PolyLine() {
+        this.Points = new ArrayList<Point>();
+    }
+    public void appendPoint(int x, int y) {
+        this.appendPoint(x,y);
+    }
+    public void appendPoint(Point Points) {
+        this.appendPoint(Points);
+    }
+    public String toString() {
+        return String.valueOf(Points);
+    }
+    public double getLength(double Length) {
+        return Length;
+    }
+
+}
+###### The Main #######
+import java.util.ArrayList;
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> Points = new ArrayList<>();
+
+        Points.add("One");
+        Points.add("Two");
+        Points.add("Three");
+        PolyLine p1 = new PolyLine();
+        p1.getLength(4.4);
+        System.out.println(p1);
+    }
+}
