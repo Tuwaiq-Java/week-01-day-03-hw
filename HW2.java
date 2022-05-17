@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 class Circle {
@@ -74,6 +75,58 @@ class Customer {
     }
 }
 
+class Point {
+    private int x;
+    private int y;
+
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getY() {
+        return y;
+    }
+}
+
+ class PolyLine {
+    private ArrayList<Point> points;
+
+     public PolyLine(ArrayList<Point> points) {
+         this.points = points;
+     }
+     public void appendPoint(int x, int y) {
+         Point point1 = new Point(x, y);
+         points.add(point1);
+     }
+     public void appendPoint(Point point) {
+         points.add(point);
+     }
+
+     public double getLength() {
+         return this.points.size();
+     }
+
+     @Override
+     public String toString() {
+         return "PolyLine{" +
+                 "points=" + points +
+                 '}';
+     }
+ }
+
 
 
 
@@ -129,6 +182,18 @@ public class HW2 {
         System.out.println(customer.toString());
 
         System.out.println("!-----------------------------------------!");
+
+
+        //الواجب الخامس
+        ArrayList<Point> points = new ArrayList<Point>();
+        points.add(new Point(11, 12));
+        points.add(new Point(13, 14));
+        PolyLine polyLine = new PolyLine(points);
+        System.out.println(polyLine);
+        System.out.println("!-----------------------------------------!");
+
+
+
     }
 
     public static double div(double num1, double num2) {
