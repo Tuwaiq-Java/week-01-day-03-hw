@@ -34,3 +34,9 @@ The `Customer` class models a customer is design as shown in the class diagram. 
 ![](https://paper-attachments.dropbox.com/s_4E590E9653C83DA7D0CCC883A9AD9C103A7D812EFF35F3CB94735A83BAA9B3D2_1650974917936_ExerciseOOP_CustomerAccount.png)
 
 
+
+
+# الواجب الخامس
+
+<img width="1054" alt="image" src="https://user-images.githubusercontent.com/58336325/168804478-d53f1083-6b9a-4af6-8fb8-2bbbfccb520d.png">
+
