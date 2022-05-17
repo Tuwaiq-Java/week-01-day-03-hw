@@ -1,0 +1,245 @@
+//renad aloatibi
+//Q1
+package project_java;
+import java.util.Scanner;
+
+public class div {
+
+    public static void main(String[] args)
+    {
+        //int n1 = 20;
+       // int n2 = 0;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the number1:");
+        int num1 = scanner.nextInt();
+
+        System.out.println("Enter the number2:");
+        int num2= scanner.nextInt();
+int x=Dividing(num1,num2);
+try {
+    System.out.println("the result"+" "+x);
+}
+catch (ArithmeticException e) {
+    // Exception handler
+    System.out.println("Divided by zero operation cannot possible");
+}//end catch
+
+    }//ens main
+
+
+        public static int Dividing(int n1,int n2) throws RuntimeException {
+            if(n2==0){
+                throw new ArithmeticException("Dividing by zero");
+            }
+
+            return n1/n2;
+        }//end Dividing
+}//end class
+
+
+// Q2
+
+package p2;
+import java.util.Scanner;
+
+public class Price {
+    public static void main(String[] args) {
+
+        Scanner s= new Scanner(System.in);
+
+
+        try {
+            System.out.println("Enter the price");
+            double price=s.nextDouble();
+            double tax = calculateTax(price);
+            System.out.println("the result of tax is: "+tax);
+        }catch (Exception e) {
+            System.out.println(e);
+
+        }
+        finally {
+            System.out.println("compute the tax");
+        }
+    }//end main
+
+
+
+    static double calculateTax(double price) throws RuntimeException{
+            if(price<100 ||price>500){
+                throw new ArithmeticException("should be the price between 100-500");
+            }
+            double r=price * 15/100;
+            return r;
+        }//end calculateTax
+
+    }//end class
+
+//Q3
+
+package p2;
+
+public class Circle {
+
+    private double radius=1.0;
+
+
+
+
+    public Circle(){
+        radius=1.0;
+    }
+    public Circle(double radius){
+this.radius=radius;
+    }
+   public double getRadius(){
+        return radius;
+   }
+    public void setRadius(double radius){
+       this.radius=radius;
+    }
+    public double getArea(){
+        return radius*radius*Math.PI;
+
+    }
+    public double getCircumference(){
+        return radius*radius*Math.PI;
+
+    }
+    public String toString(){
+       return "the result of radius"+radius;
+    }
+
+
+}//end class
+
+// main of Circle
+package p2;
+
+public class Test_circle {
+    public static void main(String[] args) {
+        // creat object1
+        Circle c1 = new Circle();
+
+        System.out.println("The Circle has radius of " + c1.toString() + " and area of " + c1.getArea()+"circimftence"+ c1.getCircumference());
+        // creat object2
+        Circle c2 = new Circle(2.0);
+        System.out.println("The Circle has radius of " + c2.toString() + " and area of " + c2.getArea()+"circimftence"+ c2.getCircumference());
+
+    } //end main
+
+}//end the class
+
+//Q4
+package p2;
+
+public class Customer {
+    private int id;
+    private String name;
+    private char gender;
+    private int discount;
+
+
+
+    public Customer(int id,String name,int discount){
+       this.id=id;
+       this.name=name;
+       this.discount=discount;
+    }
+    public int getId(){
+        return id;
+    }
+    public String getName(){
+        return name;
+    }
+    public char getGender(){
+        return gender;
+    }
+    public String toString(){
+        return "the name "+name+"("+(id)+")";
+    }
+}
+
+//main of customer
+
+package p2;
+
+public class Test_customer {
+    public static void main(String[] args) {
+        Customer c1=new Customer(1,"Renad",20);
+        Customer c2=new Customer(3,"bader",15);
+
+        System.out.println(c1);
+        System.out.println(c2);
+
+    }
+}
+// class point
+//Q5
+package p2;
+
+public class Point {
+    private int x;
+    private int y;
+
+    public Point(int x, int y) {
+    }
+}
+//class polyline
+package p2;
+
+import java.util.ArrayList;
+public class PolyLine {
+    ArrayList<Point> points;
+
+
+    public PolyLine() {
+        points = new ArrayList<Point>();
+    }
+
+    public PolyLine(ArrayList<Point> points) {
+        this.points = points;
+    }
+
+    public void appendPoints(int x, int y) {
+        Point point = new Point(x, y);
+        points.add(point);
+    }
+
+    public void appendPoints(Point p) {
+        points.add(p);
+    }
+
+    public double getLength() {
+        return points.size();
+    }
+
+    @Override
+    public String toString() {
+        String str = "";
+
+        for (Point ele : points) {
+            System.out.println(ele);
+            str = str + ele.toString();
+        }
+        return str;
+
+    }
+}
+
+//main of point
+PolyLine
+
+package p2;
+import java.util.ArrayList;
+
+public class Test_PolyLine {
+    public static void main(String[] args) {
+        PolyLine line = new PolyLine();
+        line.appendPoints(new Point(18, 9));
+        line.appendPoints(2, 41);
+        line.appendPoints(36, 20);
+        System.out.println(line);// call to String
+
+    }
+}
+
