@@ -79,7 +79,7 @@ public class Ex3 {
         Ball b1 = new Ball(1,2,3,1,2);
         b1.move();
         b1.move();
-        b1.move();
+//        b1.move();
         System.out.println(b1.toString());
     }
 }
