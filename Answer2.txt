@@ -129,8 +129,56 @@ public class Customer {
         return "Name(ID) : "+name+'('+ID+')';
     }
 }
+A5:
+import java.util.ArrayList;
 
-Applying A3 and A4:
+public class PolyLine {
+    private ArrayList<Point>points;
+    public PolyLine(){
+    this.points=new ArrayList<>();
+    }
+    public PolyLine(ArrayList<Point> points){
+    this.points=points;
+    }
+    public void appendPoint(int x ,int y){
+        points.add(new Point(x,y));
+    }
+    public void appendPoint(Point point){
+        points.add(point);
+    }
+
+    @Override
+    public String toString() {
+        String points_str="";
+        for(int i=0;i<points.size();i++){
+            points_str+=points.get(i).toString();
+        }
+        return '{'+points_str+'}';
+    }
+    public double getLength(){
+        return points.size();
+    }
+
+}
+
+public class Point {
+    private int x;
+    private int y;
+    public Point(int x, int y){
+        this.x=x;
+        this.y=y;
+    }
+
+    @Override
+    public String toString() {
+        return "("+x+','+y+')';
+    }
+}
+
+
+Applying A3 and A4 and A5:
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Customer 1:");
@@ -157,8 +205,12 @@ public class Main {
         System.out.println("Area is :"+circle2.getArea());
         System.out.println("Circumference is :"+circle2.getCircumference());
 
-
-
+        PolyLine line1=new PolyLine();
+        line1.appendPoint(1,1);
+        line1.appendPoint(6,4);
+        System.out.println(line1.toString());
+        System.out.println(line1.getLength());
 
     }
 }
+
