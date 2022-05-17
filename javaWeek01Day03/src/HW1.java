@@ -1,3 +1,7 @@
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+
 class Customer {
     private int ID;
     private String name;
@@ -59,6 +63,65 @@ class Circle {
     }
 }
 
+class Point {
+    private int x,y;
+
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+}
+
+class PolyLine{
+    private List<Point> points ;
+
+    public PolyLine() {
+        this.points = new ArrayList<>();
+    }
+
+    public PolyLine(List<Point> points) {
+        this.points = new ArrayList<>(points);
+    }
+
+    public void appendPoint(int x, int y ) {
+        this.points.add(new Point(x,y));
+    }
+
+    public void appendPoint(Point point) {
+        this.points.add(point);
+    }
+
+    public int getLength() {
+        return this.points.toArray().length;
+    }
+
+    public String toString() {
+        String str = "{";
+        for (int i = 0; i < this.getLength(); i++) {
+            str += "(" + this.points.get(i).getX() + "," +this.points.get(i).getY() + ")";
+        }
+        str+="}";
+        return str;
+    }
+
+}
+
 public class HW1 {
 
 
@@ -66,35 +129,44 @@ public class HW1 {
         //HW-1
         try {
             System.out.println("********H1********");
-            System.out.println("Div:" +div(10,0));
+            System.out.println("div(): " +div(10,5));
         }catch(RuntimeException e) {
-            System.out.println(e);
+            System.out.println("Exception: "+ e);
         }
 
         // HW-2
 
         try {
-            System.out.println("********H2********");
-            System.out.println("Tax Calculated: "+calculateTax(150));
+            System.out.println("\n********H2********");
+            System.out.println("calculateTax(): "+calculateTax(150));
         } catch (Exception e) {
             System.out.println(e);
         }
 
         // HW-3
-        System.out.println("********H3********");
+        System.out.println("\n********H3********");
         Circle c1 = new Circle(3);
-        System.out.println(c1.getArea());
-        System.out.println(c1.getCircumference());
-        System.out.println(c1.getRadius());
-        System.out.println(c1.toString());
+        System.out.println("getArea(): "+c1.getArea());
+        System.out.println("getCircumference(): "+c1.getCircumference());
+        System.out.println("getRadius(): "+c1.getRadius());
+        System.out.println("toString(): "+c1.toString());
 
         //HW-4
-        System.out.println("********H4********");
+        System.out.println("\n********H4********");
         Customer customer = new Customer(1, "Salah", 'M');
-        System.out.println(customer.getName());
-        System.out.println(customer.getID());
-        System.out.println(customer.getGender());
-        System.out.println(customer.toString());
+        System.out.println("getName(): "+customer.getName());
+        System.out.println("getID(): "+customer.getID());
+        System.out.println("getGender(): "+customer.getGender());
+        System.out.println("toString(): "+customer.toString());
+
+        //HW-5
+        System.out.println("\n********H5********");
+        PolyLine pl = new PolyLine();
+        pl.appendPoint(new Point(5,4));
+        System.out.println("getLength(): "+pl.getLength());
+        pl.appendPoint(new Point(3,7));
+        System.out.println("getLength(): "+pl.getLength());
+        System.out.println("toString(): "+ pl.toString());
 
     }
 
