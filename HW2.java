@@ -37,7 +37,7 @@ class Circle {
 class Customer {
     private int ID;
     private String name;
-    private char gender= 'm' | 'f';
+    private char gender;
 
     public Customer(int ID, String name, char gender, int discount) {
         this.ID = ID;
