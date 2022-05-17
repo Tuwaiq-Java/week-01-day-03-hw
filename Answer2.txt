@@ -1,0 +1,164 @@
+A1:
+
+public class HW1 {
+    static double div(int a ,int b) throws RuntimeException {
+    if(b==0){
+        throw new ArithmeticException("Undifined-Division by zero.");
+    }
+        return a/b;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(div(1,0));
+	System.out.println(div(4,5));
+	System.out.println(div(7,2));
+    }
+}
+A2:
+
+import java.util.Scanner;
+
+public class HW2 {
+    static double calculateTax(double price) throws RuntimeException{
+    if(price<100 ||price>500){
+        throw new ArithmeticException("Invalid Data");
+    }
+        return price * 15/100;
+    }
+    public static void main(String[] args) {
+
+        Scanner s= new Scanner(System.in);
+
+
+    try {
+        System.out.println("What is the price of the item ?");
+        double price=s.nextDouble();
+        double tax = calculateTax(price);
+        System.out.println("Your tax is: "+tax);
+    }catch (Exception e) {
+        System.out.println(e);
+
+    }
+    }
+
+}
+
+
+A3:
+
+public class Circle {
+    private double radius;
+
+    public Circle() {
+        this.radius = 1.0;
+    }
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+    public double getArea() {
+        return Math.PI*Math.pow(radius,2);
+    }
+    public double getCircumference() {
+        return 2*Math.PI*radius;
+    }
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "radius=" + radius +
+                '}';
+    }
+}
+
+A4:
+
+public class Customer {
+    private int ID;
+    private String name;
+    private char gender;
+    public Customer(int ID, String name,char gender) {
+        this.ID = ID;
+        this.name = name;
+        this.gender=gender;
+    } public Customer(int ID, String name,char gender) {
+        this.ID = ID;
+        this.name = name;
+        this.gender=gender;
+    }
+    public Customer(int ID, String name,int discount) {
+        this.ID = ID;
+        this.name = name;
+        int adiscount=discount;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public char getGender() {
+        return gender;
+    }
+
+    public void setGender(char gender) {
+        this.gender = gender;
+    }
+
+    @Override
+    public String toString() {
+        return "Name(ID) : "+name+'('+ID+')';
+    }
+}
+
+Applying A3 and A4:
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Customer 1:");
+        Customer c1=new Customer(1,"Ali",'m');
+        System.out.println(c1.getID());
+        System.out.println(c1.getName());
+        System.out.println(c1.getGender());
+
+        System.out.println(c1.toString());
+
+        Circle circle1=new Circle();
+        System.out.println("Circle 1");
+        System.out.println("Radius is :"+circle1.getRadius());
+        System.out.println("Area is :"+circle1.getArea());
+        System.out.println("Circumference is :"+circle1.getCircumference());
+        System.out.println("Setting the radius of circle 1 ");
+        circle1.setRadius(2);
+        System.out.println("Radius is :"+circle1.getRadius());
+        System.out.println("Area is :"+circle1.getArea());
+        System.out.println("Circumference is :"+circle1.getCircumference());
+        System.out.println("Circle 2");
+        Circle circle2=new Circle(2);
+        System.out.println("Radius is :"+circle2.getRadius());
+        System.out.println("Area is :"+circle2.getArea());
+        System.out.println("Circumference is :"+circle2.getCircumference());
+
+
+
+
+    }
+}
