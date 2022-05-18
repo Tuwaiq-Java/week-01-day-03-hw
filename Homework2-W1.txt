@@ -1,0 +1,223 @@
+//Ex1
+
+package com.test;
+
+// Your code should handle divide by zero exception error
+
+class Div {
+
+    // Java Program to Handle Divide By Zero Exception
+
+    public static void main(String[] args)
+    {
+        int a = 6;
+        int b = 0;
+
+        System.out.print(a / b);
+        // this line Throw  ArithmeticException: / by zero
+    }
+
+}
+
+class Div {
+    public static void main (String args[]) {
+        int num1 = 10, num2 = 0, result = 0;
+        try{
+            result = num1/num2;
+            System.out.println("The result is" +result);
+        }
+        catch (ArithmeticException e) {
+            System.out.println ("Can't be divided by Zero " + e);
+            // this line Throw  ArithmeticException: / by zero
+        }
+    }
+}
+
+
+
+//Ex2
+
+
+package com.test;
+import java.util.Scanner;
+
+public class Calculate {
+
+    //takes price between 100 - 500
+    // and return the required tax for this price
+    // ( tax = price * 15/100 )
+
+    public static void main(String[]args){
+        try{
+            calculateTax();
+            System.out.println("After the method call");
+        }
+        catch(RuntimeException ex){
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public static void calculateTax()throws RuntimeException{
+        Scanner scan=new Scanner(System.in);
+        System.out.println("A Number Between 100 & 500:");
+        Double price=scan.nextDouble();
+
+        // to calculate a tax
+
+        double taxInc=price*15/100;
+        System.out.print("Tax :"+taxInc);
+
+        if(price<100 || price>500)
+        {
+            throw new RuntimeException("Number should be between 100 & 500");
+
+        }
+    }
+}
+
+
+//Ex3
+
+package com.test;
+public class Circle {
+
+    private double radius;
+
+    public Circle() {
+        this.radius = 1.0;
+    }
+
+    public Circle(double radius){
+        this.radius = radius;
+    }
+
+    //getter
+    public double getRadius() {
+        return radius;
+    }
+
+    //setter
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+    public double getArea(){
+        return radius * radius * Math.PI;
+    }
+
+    public double getCircumfrence(){
+        return radius * radius * Math.PI;
+    }
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "radius=" + radius +
+                '}';
+    }
+}
+
+
+
+//Ex4
+
+package com.test;
+public class Point {
+    private int x;
+    private int y;
+
+    public Point(int x, int y) {
+    }
+}
+
+package com.test;
+public class Customer {
+    private int ID;
+    private String name;
+    private char gender;
+
+    public Customer(int ID, String name, char gender) {
+        this.ID = ID;
+        this.name = name;
+        this.gender = gender;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public char getGender() {
+        return gender;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "ID=" + ID +
+                ", name='" + name + '\'' +
+                ", gender=" + gender +
+                '}';
+    }
+}
+
+
+
+
+//Ex5
+
+
+package com.test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+// A polyline is a line with segments formed by points
+
+public class PolyLine {
+    private List<Point> points; // list of Points
+
+    public PolyLine(){
+        points = new ArrayList<Point>();
+    }
+
+    public PolyLine(List<Point> points) {
+        this.points = points;
+    }
+
+    // Append a point (x, y)
+    public void appendPoint(int x, int y) {
+        Point newPoint = new Point(x, y);
+        points.add(newPoint);
+    }
+
+    public void appendPoint(Point point) {
+        points.add(point);
+    }
+
+    // Return {(x1,y1)(x2,y2)(x3,y3)....}
+    public String toString() {
+
+        StringBuilder sb = new StringBuilder("{");
+        for (Point aPoint : points) {
+            sb.append(aPoint.toString());
+        }
+        sb.append("}");
+        return sb.toString();
+    }
+
+    //to return the total length
+    public void getLength(){
+        return;
+    }
+}
+
+
+
+
+
+
+
