@@ -1,0 +1,24 @@
+
+   import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        // HM2
+        Scanner sc= new Scanner(System.in);
+
+
+        try {
+            System.out.println("Cost: ");
+            double price = sc.nextDouble();
+            double taxAdd = calculateTax(price);
+            System.out.println("Tax added to cost: " + taxAdd);
+        }catch (Exception e) {
+            System.out.println(e);
+
+        }
+    }
+    static double calculateTax(double price) throws RuntimeException {
+        if (price < 100 || price > 500) {
+            throw new ArithmeticException("outside the range");
+        }
+        return price + 15;
+    }}
