@@ -4,20 +4,21 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class PolyLine {
-    private ArrayList <Point> points=new ArrayList<>();
+    private ArrayList <MyPoint> points=new ArrayList<>();
 
     public PolyLine() {
+
     }
 
-    public PolyLine(ArrayList<Point> points) {
+    public PolyLine(ArrayList<MyPoint> points) {
         this.points = points;
     }
 
     public void appendPoint (int x , int y){
-        this.points.add(new Point(x,y));
+        this.points.add(new MyPoint(x,y));
     }
 
-    public void appendPoint (Point point){
+    public void appendPoint (MyPoint point){
         this.points.add(point);
     }
 

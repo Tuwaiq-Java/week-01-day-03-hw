@@ -37,8 +37,8 @@ public class Answers {
     }
 
     public static double calculateTax(int price) throws Exception {
-        if(price<100||price>500){
-            throw new Exception("price out or range");
+        if(price<100&&price>500){
+            throw new Exception("price out of range");
         }
     return price*0.15;
     }
