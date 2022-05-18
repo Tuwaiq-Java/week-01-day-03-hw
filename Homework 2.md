@@ -40,3 +40,4 @@ The `Customer` class models a customer is design as shown in the class diagram. 
 
 <img width="1054" alt="image" src="https://user-images.githubusercontent.com/58336325/168804478-d53f1083-6b9a-4af6-8fb8-2bbbfccb520d.png">
 
+# HW2 A
