@@ -1,0 +1,232 @@
+//Demo Class
+package com.package2;
+import java.util.*;
+public class Demo {
+    public static void main(String[] args) {
+
+
+//E1
+        System.out.println("E1");
+
+        div(4,7);
+
+        System.out.println("----------------------------------------");
+
+//E2
+        System.out.println("E2");
+        try {
+            calculateTax(3);
+
+        } catch (ArithmeticException e) {
+            System.out.println(e);
+        }
+        System.out.println("----------------------------------------");
+
+        //E3
+
+        Circle circle = new Circle(2);
+        System.out.println(circle.getRadius());
+        System.out.println(circle.getArea());
+        System.out.println(circle.getCircumference());
+
+        circle.setRadius(3);
+        System.out.println(circle.getRadius());
+        System.out.println(circle.getArea());
+        System.out.println(circle.getCircumference());
+        circle.toString();
+        System.out.println("----------------------------------------");
+
+
+        //E4
+        System.out.println("E4");
+        Customer customer = new Customer(34, "Ahmed", 32);
+        System.out.println(customer.getID());
+        System.out.println(customer.getGender());
+        System.out.println(customer.getName());
+        System.out.println(customer.toString());
+        System.out.println("----------------------------------------");
+
+
+        //E5
+        System.out.println("E5");
+        PolyLine pl = new PolyLine();
+        System.out.println(pl);
+        pl.appendPoint(new Point(9, 5));
+        pl.appendPoint(34, 14);
+        System.out.println(pl);
+
+
+        ArrayList<Point> points = new ArrayList<Point>();
+        points.add(new Point(45, 66));
+        points.add(new Point(54, 32));
+        points.add(new Point(50, 72));
+        PolyLine pl2 = new PolyLine(points);
+        System.out.println(pl2);
+
+
+
+
+
+
+
+   
+    }
+
+
+//EQ1
+public static void div(int x, int y) {
+    int divn;
+    try {
+         divn = x / y;
+        System.out.println(divn);
+
+    } catch (Exception e) {
+        System.out.println(e);
+
+    }
+
+}
+//EQ2
+   static double calculateTax (double price) throws ArithmeticException {
+        if (price < 100 || price > 500) {
+
+            throw new ArithmeticException(" Your Price must be between 100 - 500 SR.");
+        }
+
+            double tax = price * 15/100;
+             return  tax ;
+
+    }
+
+}
+
+//Customer Class
+
+package com.package2;
+
+public class Customer {
+    private int ID;
+    private String name;
+    private char gender = 'm';
+
+    public Customer(int ID, String name, int discount) {
+        this.ID = ID;
+        this.name = name;
+    }
+
+    public int getID() {
+        return ID;
+    }
+    public String getName() {
+        return name;
+    }
+    public char getGender() {
+        return gender;
+    }
+    public String toString(){
+        return getName()+" ( " + this.getID() +" )";}
+
+
+}
+
+
+
+
+//Circle Class 
+
+package com.package2;
+import java.math.*;
+
+public class Circle {
+    private double radius =1.0;
+    public Circle(){}
+    public Circle(double radius){this.radius=radius;}
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+    public double getRadius() {
+        return radius;
+    }
+    public double getArea() {
+        double area = Math.PI * (this.radius * this.radius);
+        return area;
+    }
+    public double getCircumference() {
+       double circumference= Math.PI * 2*this.radius;
+        return circumference;
+    }
+
+
+
+
+
+
+}
+
+
+
+
+//Class PolyLine 
+
+package com.package2;
+
+import java.awt.*;
+import java.util.ArrayList;
+
+public class PolyLine {
+    private ArrayList<Point> points;
+
+    public PolyLine(){
+        points =new ArrayList<>();
+    }
+    public PolyLine(ArrayList<Point> pointst ){
+        points =new ArrayList<>();
+
+        points=pointst;
+
+    }
+
+    public  void appendPoint (int x , int y){
+        Point point1 = new Point(x, y);
+        points.add(point1);
+
+    }
+    public  void appendPoint (Point pointt){
+
+           points.add( pointt );
+
+
+    }
+
+    public String toString(){
+        String s=" { ";
+        for (int i=0; i< points.size();i++)
+            s+=" ("+ points.get(i).getX()+ " ,  " +points.get(i).getY()+" )";
+        s+=" } ";
+    return s;}
+
+}
+
+
+
+
+
+// Class Point 
+
+package com.package2;
+
+public class Point {
+    private int x,y;
+    public Point(int x, int y) {this.x=x; this.y=y; }
+    public int getX() {return x; }
+    public int getY() { return y; }
+    public void setX(int x) { this.x=x; }
+    public void setY(int y) {this.y=y; }
+
+
+
+
+}
+
+
